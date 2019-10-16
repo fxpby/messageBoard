@@ -1,0 +1,30 @@
+<% include header.ejs %>
+
+<h2 class="text-center mt-5 mb-5">留言板</h2>
+<div class="text-center">
+    <a href="/new" class="btn btn-sm btn-danger">举手，我要留言</a>
+</div>
+
+<!--留言内容区-->
+<div class="container mb-3 mt-3">
+    <div class="row">
+        <% if(entries.length){ %>
+<!--        遍历entries-->
+        <%
+        entries.forEach(function (entry) {
+        %>
+        <div class="card mt-2" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title"><%= entry.title%></h5>
+                <h6 class="card-subtitle mb-2 text-muted"><%= entry.published%></h6>
+                <p class="card-text"><%= entry.content%></p>
+            </div>
+        </div>
+        <% }) %>
+        <% }else{ %>
+            暂无留言<a href="/new">来一条留言吧</a>
+        <% }%>
+    </div>
+</div>
+
+<% include footer.ejs %>

@@ -1,0 +1,20 @@
+<% include header.ejs %>
+
+<div class="container">
+    <h3 class="text-center mt-5 mb-3">请输入留言内容</h3>
+    <form method="post" role="form">
+        <div class="form-group">
+            <label for="title">留言标题：</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="请输入标题.." required>
+        </div>
+        <div class="form-group">
+            <label for="title">留言内容：</label>
+            <textarea type="text" rows="6" class="form-control" id="content" name="content" placeholder="请输入内容.." required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="提交" class="btn btn-primary float-right">
+        </div>
+    </form>
+</div>
+
+<% include footer.ejs %>
